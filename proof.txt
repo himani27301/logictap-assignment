@@ -1,0 +1,11 @@
++ URL=http://127.0.0.1:8000
++ BODY='{"call_id":"abc123","status":"answered","duration_secs":42}'
++ curl --fail-with-body -sS -w '\nHTTP %{http_code}\n' http://127.0.0.1:8000/call-ended -H 'Content-Type: application/json' -d '{"call_id":"abc123","status":"answered","duration_secs":42}'
+{"ok": true, "duplicate": false}
+HTTP 200
++ curl --fail-with-body -sS -w '\nHTTP %{http_code}\n' http://127.0.0.1:8000/call-ended -H 'Content-Type: application/json' -d '{"call_id":"abc123","status":"answered","duration_secs":42}'
+{"ok": true, "duplicate": true}
+HTTP 200
++ curl --fail-with-body -sS -w '\nHTTP %{http_code}\n' http://127.0.0.1:8000/calls/abc123
+{"call_id": "abc123", "status": "answered", "duration_secs": 42}
+HTTP 200

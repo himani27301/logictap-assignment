@@ -1,0 +1,43 @@
+test_changed_duplicate_keeps_first_record (test_app.CallServiceTests.test_changed_duplicate_keeps_first_record) ... 127.0.0.1 - - [06/Oct/2026 10:32:12] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:12] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:12] "GET /calls/abc123 HTTP/1.1" 200 -
+ok
+test_concurrent_deliveries_store_one_record (test_app.CallServiceTests.test_concurrent_deliveries_store_one_record) ... 127.0.0.1 - - [06/Oct/2026 10:32:12] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:12] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:12] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:12] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:12] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:12] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:12] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:12] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:13] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:13] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:13] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:13] "POST /call-ended HTTP/1.1" 200 -
+ok
+test_invalid_fields_do_not_create_records (test_app.CallServiceTests.test_invalid_fields_do_not_create_records) ... 127.0.0.1 - - [06/Oct/2026 10:32:14] "POST /call-ended HTTP/1.1" 400 -
+127.0.0.1 - - [06/Oct/2026 10:32:14] "POST /call-ended HTTP/1.1" 400 -
+127.0.0.1 - - [06/Oct/2026 10:32:14] "POST /call-ended HTTP/1.1" 400 -
+127.0.0.1 - - [06/Oct/2026 10:32:14] "POST /call-ended HTTP/1.1" 400 -
+127.0.0.1 - - [06/Oct/2026 10:32:14] "POST /call-ended HTTP/1.1" 400 -
+127.0.0.1 - - [06/Oct/2026 10:32:14] "POST /call-ended HTTP/1.1" 400 -
+ok
+test_malformed_json_returns_clear_error (test_app.CallServiceTests.test_malformed_json_returns_clear_error) ... 127.0.0.1 - - [06/Oct/2026 10:32:14] "POST /call-ended HTTP/1.1" 400 -
+ok
+test_missing_call_id_is_rejected_without_insert (test_app.CallServiceTests.test_missing_call_id_is_rejected_without_insert) ... 127.0.0.1 - - [06/Oct/2026 10:32:15] "POST /call-ended HTTP/1.1" 400 -
+ok
+test_repeated_request_stores_one_record (test_app.CallServiceTests.test_repeated_request_stores_one_record) ... 127.0.0.1 - - [06/Oct/2026 10:32:15] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:15] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:15] "GET /calls/abc123 HTTP/1.1" 200 -
+ok
+test_restart_preserves_record_and_deduplication (test_app.CallServiceTests.test_restart_preserves_record_and_deduplication) ... 127.0.0.1 - - [06/Oct/2026 10:32:16] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:16] "POST /call-ended HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 10:32:16] "GET /calls/abc123 HTTP/1.1" 200 -
+ok
+test_unknown_call_returns_404 (test_app.CallServiceTests.test_unknown_call_returns_404) ... 127.0.0.1 - - [06/Oct/2026 10:32:17] "GET /calls/missing HTTP/1.1" 404 -
+ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 5.566s
+
+OK
